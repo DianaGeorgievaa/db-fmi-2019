@@ -1,0 +1,22 @@
+INSERT INTO PRODUCT (model,maker,type)
+VALUES ('1100','C','PC')
+
+INSERT INTO PC (model,speed,ram,hd,price,cd,code)
+VALUES('1100',2400,2048,500,299,'52x',12)
+
+DELETE FROM PC
+WHERE MODEL='1100'
+
+DELETE FROM PRODUCT
+WHERE type='laptop' AND MAKER NOT IN (SELECT MAKER FROM PRODUCT WHERE type='printer')
+
+UPDATE PRODUCT
+SET maker='A'
+WHERE maker='B'
+
+UPDATE PC
+SET price=price/2, hd=hd/2
+
+UPDATE LAPTOP
+SET screen=screen+1
+WHERE model IN (SELECT MODEL FROM PRODUCT WHERE MAKER='B')
