@@ -1,15 +1,13 @@
 INSERT INTO SHIPS(NAME,CLASS,LAUNCHED)
 	   VALUES('Nelson','Nelson',1927),
-			 ('Rodney','Nelson',1927);
+	         ('Rodney','Nelson',1927);
 
 INSERT INTO CLASSES(CLASS,TYPE,COUNTRY,NUMGUNS,BORE,DISPLACEMENT)
 	   VALUES('Nelson','bb','Gt.Britain',9,16,34000),
-			 ('Nelson','bb','Gt.Britain',9,16,34000);
+	         ('Nelson','bb','Gt.Britain',9,16,34000);
 
 DELETE FROM SHIPS
-WHERE NAME IN(SELECT SHIP
-			  FROM OUTCOMES
-			  WHERE RESULT='sunk');
+WHERE NAME IN(SELECT SHIP FROM OUTCOMES WHERE RESULT='sunk');
 
 UPDATE CLASSES
 SET BORE=BORE*2.5;
