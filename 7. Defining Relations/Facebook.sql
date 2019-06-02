@@ -24,7 +24,7 @@ date DATETIME
 CREATE TABLE Groups(
 groupId INT IDENTITY,
 name VARCHAR(50),
-description VARCHAR(250)
+description VARCHAR(250) DEFAULT ' '
 );
 
 CREATE TABLE GroupMembers(
